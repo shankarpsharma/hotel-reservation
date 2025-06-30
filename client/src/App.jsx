@@ -8,7 +8,7 @@ export default function App() {
   const [booked, setBooked] = useState([]);
 
   const fetchRooms = async () => {
-    const res = await axios.get('http://localhost:3001/rooms/');
+    const res = await axios.get('https://hotel-reservation-c9h9.onrender.com/rooms/');
     setRooms(res.data);
     setBooked([]);
   };
@@ -18,7 +18,7 @@ export default function App() {
   }, []);
 
   const handleBook = async (count) => {
-    const res = await axios.post('http://localhost:3001/rooms/book', { count }, {
+    const res = await axios.post('https://hotel-reservation-c9h9.onrender.com/rooms/book', { count }, {
         headers: {
           'Content-Type': 'application/json'
         }
@@ -28,13 +28,13 @@ export default function App() {
   };
 
   const handleRandom = async () => {
-    const res = await axios.post('http://localhost:3001/rooms/generate-random');
+    const res = await axios.post('https://hotel-reservation-c9h9.onrender.com/rooms/generate-random');
     setRooms(res.data);
     setBooked([]);
   };
 
   const handleReset = async () => {
-    const res = await axios.post('http://localhost:3001/rooms/reset');
+    const res = await axios.post('https://hotel-reservation-c9h9.onrender.com/rooms/reset');
     setRooms(res.data);
     setBooked([]);
   };
